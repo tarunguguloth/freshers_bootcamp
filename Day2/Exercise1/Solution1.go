@@ -21,7 +21,7 @@ func main() {
 		m[chars]+=1
 	}
 	asciiNum:=97
-	fmt.Println("{")
+	fmt.Println("{{")
 	for i:=0;i<26;i++{
 		character := string(asciiNum+i)
 		fmt.Printf("  %q: ",character)
