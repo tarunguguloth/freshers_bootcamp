@@ -10,7 +10,7 @@ func SetupRouter() *gin.Engine {
 	r := gin.Default()
 	grp1 := r.Group("/user-api")
 	{
-		grp1.GET("user", Controllers.GetProducts)
+		grp1.GET("getProducts", Controllers.GetProducts)
 		grp1.POST("products", Controllers.CreateProduct)
 		grp1.POST("orders", Controllers.CreateOrder)
 		grp1.GET("products/:id", Controllers.GetProductByID)
