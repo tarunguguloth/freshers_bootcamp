@@ -9,6 +9,24 @@ type Node struct {
 	left *Node
 	right *Node
 }
+
+func preOrder(node *Node) {
+	if node == nil {
+		return
+	}
+	fmt.Print(node.data+ " ")
+	preOrder(node.left)
+	preOrder(node.right)
+}
+func postOrder(node *Node) {
+	if node == nil {
+		return
+	}
+	postOrder(node.left)
+	postOrder(node.right)
+	fmt.Print(node.data+ " ")
+}
+
 func createTree(arr []string) *Node {
 	if len(arr)==0 {
 		return nil
@@ -34,29 +52,14 @@ func checkOperator(s string) bool {
 	}
 	return false
 }
-func preorder(node *Node) {
-	if node == nil {
-		return
-	}
-	fmt.Print(node.data+ " ")
-	preorder(node.left)
-	preorder(node.right)
-}
-func postorder(node *Node) {
-	if node == nil {
-		return
-	}
-	postorder(node.left)
-	postorder(node.right)
-	fmt.Print(node.data+ " ")
-}
+
 
 func main() {
 	s := "a + b - c"
 	arr :=  strings.Split(s, " ")
 	root := createTree(arr)
-	preorder(root)
+	preOrder(root)
 	fmt.Println()
-	postorder(root)
+	postOrder(root)
 	fmt.Println()
 }
